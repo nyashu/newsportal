@@ -21,10 +21,14 @@
                 <a href="" class="m-3 hover:text-cyan-500">News</a>
             </li>
             <li>
-                <a href="" class="m-3 hover:text-cyan-500">About Us</a>
+                <a href="{{ route('contact') }}" class="m-3 hover:text-cyan-500">Contact Us</a>
             </li>
             <li>
-                <a href="{{ route('contact') }}" class="m-3 hover:text-cyan-500">Contact Us</a>
+                <div class="flex border-2 border-gray-200 rounded">
+                        <form action="{{ route('search') }}" method="GET">
+                            <input type="text" name="search" placeholder="Search..." required/>
+                            <button type="submit">Search</button>
+                        </form>
             </li>
         </ul>
     </nav>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,11 @@ Route::post('dashboard/aboutus', [ContactUsController::class, 'dashabout']);
 Route::get('/', [WebController::class, 'index']);
 Route::get('/contactus', [WebController::class, 'contact'])->name('contact');
 Route::post('/contactus', [WebController::class, 'store']);
+
+//Search
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+//HometoNewsPage
+Route::get('/news/{id}', [SearchController::class, 'news'])->name('news');
 
 
 
