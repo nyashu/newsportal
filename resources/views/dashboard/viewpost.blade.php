@@ -41,10 +41,11 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white">
+
                             @foreach ($data as $data_list)
                                 <tr class="whitespace-nowrap">
                                     <td class="px-6 py-4 text-sm text-gray-500">
-                                        {{ $data_list->id }}
+                                        {{ $loop->iteration + $data->firstItem() - 1 }}
                                     </td>
                                     <td class="px-6 py-4">
                                         <div class="text-sm text-gray-900">
@@ -64,17 +65,28 @@
                                         <a href="{{ route('edit', $data_list->id) }}"
                                             class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</a>
                                     </td>
-                                    <td class="px-6 py-4">
+                                    {{-- <td class="px-6 py-4">
                                         <a href="{{ route('delete', $data_list->id) }}"
                                             class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</a>
+                                    </td> --}}
+                                    <td>
+                                        <form method="get" action="{{ route('delete', $data_list->id) }}">
+                                            @csrf
+                                            <input name="_method" type="hidden" value="DELETE">
+                                            <button type="submit" class="bg-red-500 p-1 rounded-sm text-sm" onclick="return myFunction();">Delete</button>
+                                        </form>
                                     </td>
+
                                 </tr>
                             @endforeach
 
                         </tbody>
                     </table>
+                    
                 </div>
             </div>
+            {{ $data->links() }}
         </div>
+        
     </div>
 @endsection

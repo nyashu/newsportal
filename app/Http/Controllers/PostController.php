@@ -14,7 +14,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth.basic']);
+        $this->middleware(['auth']);
     }
     
     public function index()
@@ -64,8 +64,8 @@ class PostController extends Controller
 
     public function view_post()
     {
-        $data = Post::get();
-        return view('dashboard.viewpost', compact('data'));
+        $data = Post::latest()->simplePaginate(5);
+        return view('dashboard.viewpost', compact('data'))->with('no', 1);
     }
     
 

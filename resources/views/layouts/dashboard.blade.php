@@ -26,12 +26,12 @@
             <button class="rounded-sm border-blue-500 text-gray-600 border-2 px-2 mx-3 ">
                 <a href="/" target="_blank">View site</a>
             </button>
-            {{-- <form action="{{ route('logout') }}" method="POST">
+            <form action="{{ route('logout') }}" method="POST">
                 @csrf
-                <button class="rounded-sm border-blue-500 text-gray-600 border-2 px-2 ">
+                <button type="submit" class="rounded-sm border-blue-500 text-gray-600 border-2 px-2 ">
                     Logout <i class="far fa-edit"></i></a>
                 </button>
-            </form> --}}
+            </form>
         </div>
     </nav>
 
@@ -60,7 +60,12 @@
             @yield('content')
         </div>
     </div>
-
+    <script>
+        function myFunction() {
+            if(!confirm("Are you sure ?"))
+            event.preventDefault();
+        }
+       </script>
 </body>
 
 </html>

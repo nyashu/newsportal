@@ -17,31 +17,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::post('/dashboard/logout', [DashboardController::class, 'logout'])->name('logout');
+Route::get('/login', [DashboardController::class, 'index'])->name('login');
+Route::post('/login', [DashboardController::class, 'login']);
+Route::post('/logout', [DashboardController::class, 'logout'])->name('logout');
+
+
 
 Route::get('/dashboard', [PostController::class, 'index'])->name('index');
 Route::get('/dashboard/add-post', [PostController::class, 'add_post'])->name('addpost');
 Route::post('/dashboard/add-post', [PostController::class, 'add_post_request']);
-
 Route::get('dashboard/viewpost', [PostController::class, 'view_post'])->name('viewpost');
-
 Route::get('dashboard/viewpost/edit/{id}', [PostController::class, 'edit'])->name('edit');
 Route::post('/dashboard/update/{id}', [PostController::class, 'update'])->name('update');
 Route::get('dashboard/viewpost/delete/{id}', [PostController::class, 'delete'])->name('delete');
 
+Route::get('dashboard/contactus', [ContactUsController::class, 'contactus'])->name('dash');
+Route::get('dashboard/aboutus', [ContactUsController::class, 'aboutus'])->name('about');
+Route::post('dashboard/aboutus', [ContactUsController::class, 'dashabout']);
 
 // Route::resource('/dashboard', PostController::class);
 
 // <--Website Routes--> 
 
 Route::get('/', [WebController::class, 'index']);
+Route::get('/contactus', [WebController::class, 'contact'])->name('contact');
+Route::post('/contactus', [WebController::class, 'store']);
 
 
 
 
-Route::get('dashboard/contactus', [ContactUsController::class, 'contactus'])->name('dash');
-Route::get('dashboard/aboutus', [ContactUsController::class, 'aboutus'])->name('about');
-Route::post('dashboard/aboutus', [ContactUsController::class, 'dashabout']);
-// //For User
-Route::get('/contactus', [ContactUsController::class, 'index'])->name('contact');
-Route::post('/contactus', [ContactUsController::class, 'store']);
+

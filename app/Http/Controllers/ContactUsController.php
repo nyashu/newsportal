@@ -8,36 +8,17 @@ use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
-    public function index(){
-        $aboutus = Aboutus::all();
-      
-        return view('newsportal.contactus',compact('aboutus'));
+    public function __construct()
+    {
+        $this->middleware(['auth']);
     }
 
-    public function store(Request $request){
-        $contactus = $request->validate([
-                'name' => 'required|string',
-                'email' => 'required|email|unique:users',
-                'message' => 'required|string'
-        ]);
-
-        // dd($contactus);
-        Contactus::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'message' => $request->message,
-           
-           ]);
 
 
-           $aboutus = Aboutus::all();      
-        return view('newsportal.contactus',compact('aboutus'));      
-
-    }
 
     //Admin
     public function contactus(){
-        $contactus = Contactus::all();
+        $contactus = Contactus::latest()->paginate(6);
         return view('dashboard.contactus', ['contactus' => $contactus]);
     }
 
