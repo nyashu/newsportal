@@ -12,6 +12,7 @@ class WebController extends Controller
     public function index()
     {
         //for headline
+        //hello
 
         $head = Post::latest()->first();
         // dd($headline);
