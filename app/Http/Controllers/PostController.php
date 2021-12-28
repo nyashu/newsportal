@@ -102,6 +102,7 @@ class PostController extends Controller
 
     public function delete($id)
     {
+        
         Post::find($id)->delete();
         return redirect()->route('viewpost')->with('success', 'successfully deleted !!');
     }

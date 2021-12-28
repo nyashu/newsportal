@@ -28,6 +28,7 @@
                 Title
             </label>
             <input name="title"
+            value="{{ old('title') }}"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="title" type="text" placeholder="add title">
         </div>
@@ -37,6 +38,7 @@
                 Description
             </label>
             <textarea name="description"
+            
                 class="
         form-control
         block
@@ -54,7 +56,7 @@
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
       "
-                id="description" rows="3" placeholder="add news description"></textarea>
+                id="description" rows="3" placeholder="add news description">{{ old('description') }}</textarea>
         </div>
 
         <div class="mb-4">

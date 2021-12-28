@@ -23,4 +23,18 @@ class SearchController extends Controller
         $data = Post::find($id);
         return view('newsportal.news', compact('data'));
     }
+
+    public function admin_search(Request $request)
+    {
+        // Get the search value from the request
+        $search = $request->input('search');
+        // Search in the title and body columns from the posts table
+        $data = Post::query()
+            ->where('id', 'LIKE', "%{$search}%")
+            ->orWhere('title', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->get();
+        // Return the search view with the resluts compacted
+        return view('dashboard.search', compact('data'));
+    }
 }

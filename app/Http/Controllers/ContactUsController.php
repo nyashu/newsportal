@@ -11,6 +11,7 @@ class ContactUsController extends Controller
     public function __construct()
     {
         $this->middleware(['auth']);
+        // $this->authorize('isAdmin');
     }
 
 
@@ -18,16 +19,19 @@ class ContactUsController extends Controller
 
     //Admin
     public function contactus(){
+        // $this->authorize('isAdmin');
         $contactus = Contactus::latest()->paginate(6);
         return view('dashboard.contactus', ['contactus' => $contactus]);
     }
 
     public function aboutus(){
+        // $this->authorize('isAdmin');
         $aboutus = Aboutus::all();
       return view('dashboard.aboutus',compact('aboutus'));
        
     }
     public function dashabout(Request $request){
+        // $this->authorize('isAdmin');
         $aboutus = $request->validate([
             'whoweare'=>'required|max:10000',
             'officelocation' => 'required',

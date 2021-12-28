@@ -40,6 +40,7 @@
                 Description
             </label>
             <textarea name="description"
+            
                 class="
         form-control
         block
@@ -66,6 +67,7 @@
             </label>
             <div class="flex">
                 <input name="image"
+                
                     class="shadow appearance-none border rounded py-2 px-3  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="image" type="file">
                 <img src="{{ Storage::url($data->image) }}" alt="image" title="" class="w-64 h-32">
@@ -76,7 +78,7 @@
             <button
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit">
-                Publish
+                Update
             </button>
 
         </div>

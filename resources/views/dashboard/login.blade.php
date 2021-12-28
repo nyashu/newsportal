@@ -38,14 +38,22 @@
                 <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name= "password" id="inline-password" type="password" placeholder="******************">
               </div>
             </div>
+            
             <div class="md:flex md:items-center mb-6">
               <div class="md:w-1/3"></div>
-              {{-- <label class="md:w-2/3 block text-gray-500 font-bold">
-                <input class="mr-2 leading-tight" type="checkbox">
-                <span class="text-sm">
-                  Send me your newsletter!
-                </span>
-              </label> --}}
+             
+                    <label class="inline-flex items-center cursor-pointer"
+                      ><input
+                        id="customCheckLogin"
+                        name="remember"
+                        type="checkbox"
+                        class="form-checkbox border-0 rounded text-gray-800 ml-1 w-5 h-5"
+                        style="transition: all 0.15s ease 0s;"
+                      /><span class="ml-2 text-sm font-semibold text-gray-700"
+                        >Remember me</span
+                      ></label
+                    >
+                  
             </div>
             <div class="md:flex md:items-center">
               <div class="md:w-1/3"></div>

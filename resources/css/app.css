@@ -5,3 +5,7 @@
 .w-72{
     height : 89.5vh;
 }
+input:checked ~ .dot {
+    transform: translateX(100%);
+    background-color: #48BB78;
+  }
