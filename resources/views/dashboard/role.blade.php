@@ -5,7 +5,9 @@
         <div class="flex flex-col">
             <div class="w-full">
             <div class=" border-b border-gray-200 shadow">
+                <div class="flex items-center">
                 <h1 class="text-center text-green-500 font-bold text-2xl underline p-3 mb-4">Manage Roles</h1>
+                </div>
                 @if (session()->has('success'))
                 <div class="bg-green-100 border-l-4 border-orange-500 text-green-700 p-4 mb-2" role="alert">
                     <p>{{ session()->get('success') }}</p>
