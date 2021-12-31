@@ -56,7 +56,7 @@ class PostController extends Controller
 
         $user->post()->save($post);
 
-        return redirect()->route('addpost')->with('success', 'Succesfully published on website');
+        return redirect()->route('addpost')->with('success', 'Succesfully created post, On queue');
     }
 
 

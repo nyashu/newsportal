@@ -56,11 +56,9 @@ Route::middleware(['can:isAdmin'])->group(function () {
     Route::get('/dashboard/roles/admin/{id}', [RoleController::class, 'make_admin'])->name('admin');
     Route::get('/dashboard/roles/moderator/{id}', [RoleController::class, 'make_mod'])->name('moderator');
     Route::get('/dashboard/viewpost/status/{id}/{stat}', [StatusController::class, 'status'])->name('status');
-    
+
     Route::get('dashboard/roles/adduser', [RoleController::class, 'view_adduser'])->name('view_adduser');
     Route::post('dashboard/roles/adduser', [RoleController::class, 'adduser'])->name('adduser');
-
-
 });
 
 
