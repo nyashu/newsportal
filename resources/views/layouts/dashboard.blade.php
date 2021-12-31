@@ -43,8 +43,7 @@
                 <ul class="text-center text-blue-100">
                     <li class="p-3 mb-2 font-bold border-2 rounded-2xl"><a href="{{ route('index') }}">Overview</a>
                     </li>
-                    <li class="p-3 mb-2 font-bold border-2 rounded-2xl"><a href="{{ route('addpost') }}">Add post</a>
-                    </li>
+                    
                     <li class="p-3 mb-2 font-bold border-2 rounded-2xl"><a href="{{ route('viewpost') }}">All posts</a>
                     </li>
                     @can('isAdmin')
@@ -56,7 +55,7 @@
                     <li class="p-3 mb-2 font-bold border-2 rounded-lg"><a href="{{ route('gallery') }}">Gallery</a>
                     </li>
                     <li class="p-3 mb-2 font-bold border-2 rounded-2xl"><a href="{{ route('interview') }}">All Press links</a></li>
-                    <li class="p-3 mb-2 font-bold border-2 rounded-2xl"><a href="{{ route('addinterview') }}">Add Press Links</a></li>
+                  
                     @endcan
                  
                     <li class="p-3 mb-2 font-bold border-2 rounded-2xl"><a href="{{ route('setting') }}">Settings</a></li>

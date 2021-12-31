@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
     public function run(Faker $faker)
     {
         DB::table('users')->insert([
-            'name' => 'Yashu Neupane',
-            'email' => 'yashu@gmail.com',
+            'name' => 'Biplab Neupane',
+            'email' => 'biplab@gmail.com',
             'role' => 'admin',
-            'password' => Hash::make('yashu'),
+            'password' => Hash::make('biplab'),
             'profile_pic' => null
         ]);
 

@@ -588,6 +588,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-11\/12 {
   width: 91.666667%;
 }
+.w-4\/12 {
+  width: 33.333333%;
+}
+.w-2\/12 {
+  width: 16.666667%;
+}
+.w-1\/6 {
+  width: 16.666667%;
+}
+.w-1\/4 {
+  width: 25%;
+}
 .max-w-sm {
   max-width: 24rem;
 }
@@ -628,9 +640,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .gap-8 {
   gap: 2rem;
-}
-.gap-1 {
-  gap: 0.25rem;
 }
 .gap-2 {
   gap: 0.5rem;
@@ -801,9 +810,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(52 211 153 / var(--tw-bg-opacity));
 }
-.bg-gray-400 {
+.bg-green-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
 }
 .bg-clip-padding {
   background-clip: padding-box;

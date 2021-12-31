@@ -1,6 +1,10 @@
 @extends('layouts.dashboard')
 @section('content')
     <h1 class="font-bold text-center text-3xl underline mb-6"> All Press Links</h1>
+    
+    <p class=" w-1/4 m-auto text-center bg-green-500 p-3 font-bold border-2 rounded-2xl">
+        <a href="{{ route('addinterview') }}">Add Press Links</a>
+    </p>
     <div class="container flex justify-center mx-auto">
         <div class="flex flex-col">
             <div class="w-full">

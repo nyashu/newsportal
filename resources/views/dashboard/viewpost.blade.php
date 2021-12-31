@@ -3,6 +3,8 @@
 
 @section('content')
     <h1 class="font-bold text-center text-3xl underline mb-6"> All posts </h1>
+    <p class=" w-1/4 m-auto text-center bg-green-500 p-3 font-bold border-2 rounded-2xl"><a href="{{ route('addpost') }}">Add a post</a>
+    </p>
 
     <div class="flex border-gray-200 rounded order-last h-10 justify-end mb-2">
         <form action="{{ route('admin_search') }}" method="GET" class="">
@@ -10,6 +12,7 @@
                 required />
             <button type="submit" class="bg-green-500 p-2 rounded-xl">Search</button>
         </form>
+       
     </div>
 
     @if (session()->has('success'))
