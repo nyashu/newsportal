@@ -17,28 +17,28 @@ class DatabaseSeeder extends Seeder
     public function run(Faker $faker)
     {
         DB::table('users')->insert([
-            'name' => 'Lorem Neupane',
-            'email' => 'lorem@gmail.com',
-            'role' => 'moderator',
+            'name' => 'Yashu Neupane',
+            'email' => 'yashu@gmail.com',
+            'role' => 'admin',
             'password' => Hash::make('yashu'),
-            'profile_pic' => $faker->image('public/storage/images', 600, 480 , null, false)
+            'profile_pic' => null
         ]);
 
 
 
-        // DB::table('aboutuses')->insert([
-        //     'whoweare' => $faker->name,
-        //     'officelocation' => $faker->city,
-        //     'contactus' => $faker->phoneNumber
-        // ]);
+        DB::table('aboutuses')->insert([
+            'whoweare' => $faker->name,
+            'officelocation' => $faker->city,
+            'contactus' => $faker->phoneNumber
+        ]);
 
-        // foreach(range(1,5) as $value)
-        // {
-        //     DB::table('contactuses')->insert([
-        //         'name' => $faker->name,
-        //         'email' => $faker->email,
-        //         'message' => $faker->city
-        //     ]);
-        // }
+        foreach(range(1,5) as $value)
+        {
+            DB::table('contactuses')->insert([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'message' => $faker->city
+            ]);
+        }
     }
 }

@@ -64,7 +64,7 @@ class PostController extends Controller
 
     public function view_post()
     {
-        $data = Post::latest()->simplePaginate(5);
+        $data = Post::latest()->paginate(5);
         return view('dashboard.viewpost', compact('data'))->with('no', 1);
     }
     

@@ -23,6 +23,9 @@
                 <a href="" class="m-3 hover:text-cyan-500">News</a>
             </li>
             <li>
+                <a href="{{ route('press') }}" class="m-3 hover:text-cyan-500">Press</a>
+            </li>
+            <li>
                 <a href="{{ route('contact') }}" class="m-3 hover:text-cyan-500">Contact Us</a>
             </li>
             <li>

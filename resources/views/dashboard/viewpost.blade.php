@@ -6,7 +6,8 @@
 
     <div class="flex border-gray-200 rounded order-last h-10 justify-end mb-2">
         <form action="{{ route('admin_search') }}" method="GET" class="">
-            <input type="text" name="search" class="border-2 p-1 border-gray-500 rounded-lg" placeholder="Search..." required/>
+            <input type="text" name="search" class="border-2 p-1 border-gray-500 rounded-lg" placeholder="Search..."
+                required />
             <button type="submit" class="bg-green-500 p-2 rounded-xl">Search</button>
         </form>
     </div>
@@ -39,9 +40,11 @@
                                 <th class="px-6 py-2 text-xs text-gray-500">
                                     Updated_at
                                 </th>
+                                @can('isAdmin')
                                 <th class="px-6 py-2 text-xs text-gray-500">
-                                    Publish
+                                    Status
                                 </th>
+                                @endcan
                                 <th class="px-6 py-2 text-xs text-gray-500">
                                     Edit
                                 </th>
@@ -56,6 +59,11 @@
                                 <tr class="whitespace-nowrap">
                                     <td class="px-6 py-4 text-sm text-gray-500">
                                         {{ $loop->iteration + $data->firstItem() - 1 }}
+                                        @if ($data_list->status == 0)
+                                            <span class="text-red-500 font-bold text-sm">F</span>
+                                        @else
+                                            <span class="text-green-500 font-bold text-sm">T</span>
+                                        @endif
                                     </td>
                                     <td class="px-6 py-4">
                                         <div class="text-sm text-gray-900">
@@ -71,21 +79,25 @@
                                     <td class="px-6 py-4 text-sm text-gray-500">
                                         {{ $data_list->updated_at->diffForHumans() }}
                                     </td>
+                                    @can('isAdmin')
                                     <td class="px-6 py-4 text-sm text-gray-500">
-                                        <label for="toggleB" class="flex items-center cursor-pointer">
-                                            <!-- toggle -->
-                                            <div class="relative">
-                                              <!-- input -->
-                                              <input type="checkbox" id="toggleB" class="sr-only">
-                                              <!-- line -->
-                                              <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
-                                              <!-- dot -->
-                                              <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
-                                            </div>
-                                            <!-- label -->
-                                          </label>
-                                        </div>
+                                        @if ($data_list->status == 0)
+                                            <a href="{{ route('status', [
+                                                'id' => $data_list->id,
+                                                'stat' => $data_list->status,
+                                            ]) }}"
+                                                onclick="return myFunction();"
+                                                class="px-1 py-1 text-sm text-white bg-green-400 rounded">Publish</a>
+                                        @elseif ($data_list->status == 1)
+                                            <a href="{{ route('status', [
+                                                'id' => $data_list->id,
+                                                'stat' => $data_list->status,
+                                            ]) }}"
+                                                onclick="return myFunction();"
+                                                class="px-1 py-1 text-sm text-white bg-red-400 rounded">Unpublish</a>
+                                        @endif
                                     </td>
+                                    @endcan
                                     <td class="px-6 py-4">
                                         <a href="{{ route('edit', $data_list->id) }}"
                                             class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Edit</a>
@@ -98,7 +110,8 @@
                                         <form method="get" action="{{ route('delete', $data_list->id) }}">
                                             @csrf
                                             <input name="_method" type="hidden" value="DELETE">
-                                            <button type="submit" class="bg-red-500 p-1 rounded-sm text-sm" onclick="return myFunction();">Delete</button>
+                                            <button type="submit" class="bg-red-500 p-1 rounded-sm text-sm"
+                                                onclick="return myFunction();">Delete</button>
                                         </form>
                                     </td>
 
@@ -107,11 +120,11 @@
 
                         </tbody>
                     </table>
-                    
+
                 </div>
             </div>
             {{ $data->links() }}
         </div>
-        
+
     </div>
 @endsection

@@ -14,10 +14,11 @@ class WebController extends Controller
         //for headline
         //hello
 
-        $head = Post::latest()->first();
+        $head = Post::where('status', 1)->latest()->first();
         // dd($headline);
         //for grid
-        $result = Post::orderBy('id')->get();
+        $result = Post::where('status', 1)->orderBy('id')->get();
+        
 
         return view('newsportal.home', [
             'result' => $result,

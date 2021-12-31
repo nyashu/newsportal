@@ -5,8 +5,9 @@
         <div class="flex flex-col">
             <div class="w-full">
             <div class=" border-b border-gray-200 shadow">
-                <div class="flex items-center">
-                <h1 class="text-center text-green-500 font-bold text-2xl underline p-3 mb-4">Manage Roles</h1>
+                <div class="flex items-center justify-between">
+                <h1 class="text-center text-green-500 font-bold text-2xl underline p-3 mb-4 order-first">Manage Roles</h1>
+                <a href="{{ route('view_adduser') }}" class="border-2 border-green-500 p-2 mr-2 rounded-lg font-bold order-last text-green-500">Add User</a>
                 </div>
                 @if (session()->has('success'))
                 <div class="bg-green-100 border-l-4 border-orange-500 text-green-700 p-4 mb-2" role="alert">
@@ -95,7 +96,7 @@
                                     @else
                                         <form method="post" action="{{ route('role_delete', $role->id) }}">
                                             @csrf
-                                            <input name="_method" type="hidden" value="DELETE">
+                                            {{-- <input name="_method" type="hidden" value="DELETE"> --}}
                                             <button type="submit" class="bg-red-500 p-2 rounded-sm text-sm text-white"
                                                 onclick="return myFunction();">Delete</button>
                                         </form>
