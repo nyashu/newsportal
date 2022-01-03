@@ -46,6 +46,7 @@
                     
                     <li class="p-3 mb-2 font-bold border-2 rounded-2xl"><a href="{{ route('viewpost') }}">All posts</a>
                     </li>
+                    <li class="p-3 mb-2 font-bold border-2 rounded-2xl"><a href="{{ route('interview') }}">All Press links</a></li>
                     @can('isAdmin')
                     <li class="p-3 mb-2 font-bold border-2 rounded-lg"><a href="{{ route('role') }}">Manage Roles</a></li>
                     <li class="p-3 mb-2 font-bold border-2 rounded-lg"><a href="{{ route('dash') }}">Enquires</a>
@@ -54,7 +55,7 @@
                     </li>
                     <li class="p-3 mb-2 font-bold border-2 rounded-lg"><a href="{{ route('gallery') }}">Gallery</a>
                     </li>
-                    <li class="p-3 mb-2 font-bold border-2 rounded-2xl"><a href="{{ route('interview') }}">All Press links</a></li>
+                   
                   
                     @endcan
                  

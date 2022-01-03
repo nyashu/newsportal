@@ -84,6 +84,7 @@ Route::post('/addinterview', [PressController::class, 'postinterview']);
 //edit interviews
 Route::get('/dashpress/editinterview/{id}', [PressController::class, 'editinterview'])->name('editinterview');
 Route::post('/editinterview/{id}', [PressController::class, 'updateinterview'])->name('updateinterview');
+
 Route::get('dashpress/delete/{id}', [PressController::class, 'delete'])->name('pressdelete');
 
 
